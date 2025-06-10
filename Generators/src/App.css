@@ -1,0 +1,306 @@
+/* App.css */
+
+/* Reset and base styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode override (add .dark to body in JS if needed) */
+body.dark, .dark-bg {
+  background: #111 !important;
+  color: #f5f5f5 !important;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  background: #ececec;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+body.dark nav, .dark-bg nav {
+  background: #222;
+  border-bottom: 1px solid #333;
+}
+
+/* Navbar buttons */
+nav button {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1.2rem;
+  border-radius: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+nav button:hover, nav button:focus {
+  background: #e0e7ff;
+  color: #1e40af;
+  box-shadow: 0 2px 8px rgba(30,64,175,0.07);
+}
+
+nav button[style*="bold"] {
+  background: #6366f1;
+  color: #fff;
+  border-color: #6366f1;
+}
+
+/* Main content container */
+.main-content {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .main-content, .dark-bg .main-content {
+  background: #222;
+  color: #f5f5f5;
+}
+
+/* Generator sections */
+.generator-section {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.generator-section button {
+  margin-bottom: 1rem;
+}
+
+/* Color Generator */
+.color-box {
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  margin-top: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Quote Generator */
+.quote-box {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #374151;
+  text-align: center;
+}
+
+body.dark .quote-box, .dark-bg .quote-box {
+  color: #c7d2fe;
+}
+
+/* Form styles */
+.form-container {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+body.dark .form-container, .dark-bg .form-container {
+  background: #1e293b;
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.input, .form-container input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  transition: border 0.2s;
+}
+
+body.dark .input, body.dark .form-container input,
+.dark-bg .input, .dark-bg .form-container input {
+  background: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+
+.button, .form-container button {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
+}
+
+.button:hover, .form-container button:hover {
+  background: #4f46e5;
+}
+
+.toggle-button {
+  background: transparent;
+  color: #6366f1;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.98rem;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+}
+
+.toggle-button:hover {
+  color: #4f46e5;
+}
+
+/* Base styles: Mobile-first (phones, up to 600px) */
+/* Write your default styles here for .navbar, .main-content, .form-container, etc. */
+
+/* Tablet styles (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .main-content,
+  .form-container,
+  .generator-section {
+    max-width: 90vw;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+  }
+  .navbar {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Small Desktop styles (901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .main-content,
+  .form-container,
+  .generator-section {
+    max-width: 700px;
+    margin: 2.5rem auto;
+    padding: 2rem 2.5rem;
+  }
+  .navbar {
+    gap: 1.5rem;
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+/* Large Desktop styles (1201px and up) */
+@media (min-width: 1201px) {
+  .main-content,
+  .form-container,
+  .generator-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2.5rem 3rem;
+  }
+  .navbar {
+    gap: 2rem;
+    padding: 1.5rem 3rem;
+  }
+}
+
+/* Fine-tune font sizes for readability */
+body {
+  font-size: 1rem;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 0.97rem;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  body {
+    font-size: 1.05rem;
+  }
+}
+@media (min-width: 901px) {
+  body {
+    font-size: 1.13rem;
+  }
+}
+
+/* Responsive buttons and inputs */
+@media (max-width: 600px) {
+  .button, .form-container button, .toggle-button {
+    font-size: 0.97rem;
+    padding: 0.8rem 0.5rem;
+  }
+  .input, .form-container input {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.5rem;
+  }
+}
+
+/* Responsive quote/color box */
+@media (max-width: 600px) {
+  .color-generator-box,
+  .quote-generator-box {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.5rem;
+    min-height: 48px;
+  }
+}
+
+/* Responsive form spacing */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+    margin: 1rem auto;
+  }
+}
+
+/* Responsive navbar: stack vertically on small screens */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    padding: 1rem 0.7rem;
+  }
+}
+

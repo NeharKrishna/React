@@ -1,0 +1,124 @@
+.form-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.07), 0 1.5px 6px rgba(0,0,0,0.03);
+  transition: background 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.form-container h2 {
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #3f3d57;
+  letter-spacing: 0.01em;
+}
+
+.input, .form-container input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1.2px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #222;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(99,102,241,0.03);
+}
+
+.input:focus, .form-container input:focus {
+  border: 1.2px solid #0e0e10;
+  box-shadow: 0 0 0 2px #c7d2fe;
+  background: #fff;
+}
+
+/* Smaller, lighter placeholder text */
+.input::placeholder, .form-container input::placeholder {
+  font-size: 0.85rem;         /* Smaller font size */
+  color: #a5adc6;             /* Soft gray */
+  opacity: 1;                 /* Make it visible */
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Login/Sign Up Button with new color gradient, no hover effect */
+.button, .form-container button:not(.toggle-button) {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #0e0c0d 0%, #000000 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 2px 8px rgba(248,87,166,0.08);
+  transition: background 0.2s, transform 0.15s;
+}
+
+/* Remove hover effect */
+.button:hover, .form-container button:not(.toggle-button):hover {
+  background: linear-gradient(90deg, #1f1c1d 0%, #0b0a0a 100%);
+  transform: none;
+}
+
+/* .toggle-button {
+  display: block;
+  width: 100%;
+  background: none;
+  color: #6366f1;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.97rem;
+  font-weight: 600;
+  padding: 0.4rem 0 0.2rem 0;
+  margin-top: 0.2rem;
+  transition: color 0.2s;
+} */
+
+.toggle-button:hover {
+  color: #171719;
+  text-decoration: none;
+}
+
+/* Entrance animation */
+.form-container {
+  animation: fadeInScale 0.7s cubic-bezier(.23,1.12,.74,.98);
+}
+
+
+.input, .form-container input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1.2px solid #e0e7ef;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #222;
+  outline: none;
+  box-sizing: border-box; /* Add this to include padding in width calculation */
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(99,102,241,0.03);
+}
+
+/* Make sure placeholders stay inside the input */
+.input::placeholder, .form-container input::placeholder {
+  font-size: 0.85rem;
+  color: #a5adc6;
+  opacity: 1;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-overflow: ellipsis; /* Add this to handle overflow */
+  white-space: nowrap; /* Keep placeholder on one line */
+  overflow: hidden; /* Hide overflow */
+}
